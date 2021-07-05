@@ -22,7 +22,7 @@ class _AppState extends State<App> {
 
     setState(() {
       _locationMessage =
-          "Enlem: ${position.latitude.toStringAsFixed(5)}\nBoylam: ${position.longitude.toStringAsFixed(5)}\n";
+          "Enlem: ${position.latitude.toStringAsFixed(7)}\nBoylam: ${position.longitude.toStringAsFixed(7)}\n";
     });
 
     return _getCurrentLocation();
