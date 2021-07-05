@@ -14,19 +14,18 @@ class _AppState extends State<App> {
   String _locationMessage = "";
 
   void _getCurrentLocation() async {
-    //! Sonsuz koordinat döndürmesi için
-    while (true) {
-      final position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high);
+    final position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
 
-      // ignore: avoid_print
-      //print(position);
+    // ignore: avoid_print
+    //print(position);
 
-      setState(() {
-        _locationMessage =
-            "Enlem: ${position.latitude}\nBoylam: ${position.longitude}\n";
-      });
-    }
+    setState(() {
+      _locationMessage =
+          "Enlem: ${position.latitude}\nBoylam: ${position.longitude}\n";
+    });
+
+    return _getCurrentLocation();
   }
 
   // This widget is the root of your application.
